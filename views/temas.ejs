@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+    
+    <!-- Define o ícone da página -->
+   <link rel="icon" href="https://i.imgur.com/XNahCNe.png">
+  
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Temas</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: Arial, sans-serif;
+      background-color: #fff;
+    }
+
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 20px;
+    }
+
+    h1 {
+      text-align: center;
+      margin-bottom: 20px;
+    }
+
+    .themes {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 20px;
+    }
+
+    .theme-card {
+      background-color: #f2f2f2;
+      border-radius: 10px;
+      padding: 20px;
+      box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
+      text-align: center;
+      cursor: pointer;
+      transition: transform 0.3s;
+    }
+
+    .theme-card:hover {
+      transform: scale(1.05);
+    }
+
+    .theme-card img {
+      width: 100%;
+      max-height: 200px;
+      object-fit: cover;
+      border-radius: 10px;
+    }
+
+    .theme-card h2 {
+      font-size: 24px;
+      margin-top: 10px;
+      margin-bottom: 5px;
+    }
+
+    .theme-card p {
+      font-size: 16px;
+      color: #777;
+      margin-bottom: 10px;
+    }
+
+    
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>Escolha um Tema</h1>
+    <div class="themes">
+      <div class="theme-card" onclick="window.location.href='/salas1'">
+        <img src="https://i.imgur.com/cd7wtPz.png" alt="Tema 1">
+        <h2>Bate-Papo</h2>
+        <p>Salas direcionadas a um bate-papo descontraído, leve e divertido</p>
+      </div>
+      <div class="theme-card" onclick="window.location.href='/salas'">
+       <img src="https://i.imgur.com/0k7fwzN.png" alt="Tema 2">
+        <h2>Paquera/Bate-Papo</h2>
+        <p>Salas direcionadas a paqueras e conversas  com câmeras e microfones aleatórios.</p>
+      </div>
+      <div class="theme-card" onclick="window.location.href='/salas'">
+        <img src="https://i.imgur.com/o424B0C.png" alt="Tema 3">
+        <h2>LGBTQIAPN+</h2>
+        <p>Salas direcionadas ao público LGBTQIAPN+ com câmeras e microfones para uma conversa descontraída, leve e divertida.</p>
+      </div>
+      <div class="theme-card" onclick="window.location.href='/salas'">
+        <img src="https://i.imgur.com/AVMrK65.png" alt="Tema 4">
+        <h2>Cam-Hot</h2>
+        <p>Salas direcionadas a um hot com câmeras e microfones abusando dos desejos e fantasias</p>
+      </div>
+      <div class="theme-card" onclick="window.location.href='/salas'">
+        <img src="https://i.imgur.com/kgHNlFz.png" alt="Tema 5">
+        <h2> LGBTQIAPN+ Hot</h2>
+        <p>Salas direcionadas0 ao público LGBTQIAPN+ hot com câmeras e microfones abusando dos desejos e fantasias, tudo em um lugar só.</p>
+      </div>
+      <div class="theme-card" onclick="window.location.href='/salas'">
+        <img src="https://i.imgur.com/ORA4YsX.jpg" alt="Tema 6">
+        <h2> Sem Regras</h2>
+        <p>Salas Sem Regras para a expressão livre e sem restrições. Deixando de lado as limitações usuais do ambiente virtual, essas salas proporcionam um espaço onde qualquer coisa é possível.</p>
+      </div>
+    </div>
+  </div>
+</body>
+</html>

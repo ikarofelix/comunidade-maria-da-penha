@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   
+    <!-- Define o ícone da página -->
+   <link rel="icon" href="https://i.imgur.com/XNahCNe.png">
+ 
+   
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cadastre-se</title>
+    <style>
+          body{
+    font-family: Arial, Helvetica, sans-serif;
+    background: #f4f6f4;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+}
+
+.box{
+    background: #fff;
+    padding: 40px;
+    border-radius: 10px;
+    box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.1);
+    width: 80%;
+    max-width: 500px;
+}
+
+fieldset{
+    border: none;
+    padding: 0;
+    margin: 0 0 20px;
+}
+
+legend{
+    font-size: 1.5em;
+    color: #333;
+    padding-bottom: 10px;
+    text-align: center;
+    font-weight: 500;
+}
+
+.inputBox{
+    position: relative;
+    margin: 20px 0;
+}
+
+.inputUser, #data_nascimento{
+    width: 100%;
+    padding: 10px 20px;
+    box-sizing: border-box;
+    font-size: 16px;
+    letter-spacing: 1px;
+    border: none;
+    outline: none;
+    border-radius: 5px;
+    box-shadow: 0px 10px 15px -10px rgba(0, 0, 0, 0.15);
+    transition: box-shadow 0.3s ease;
+}
+
+.inputUser:focus, #data_nascimento:focus{
+    box-shadow: 0px 15px 15px -10px rgba(0, 0, 0, 0.15);
+}
+
+.labelInput{
+    position: absolute;
+    left: 20px;
+    top: 10px;
+    font-size: 16px;
+    color: #777;
+    transition: 0.3s all;
+}
+
+  .inputUser:focus ~ .labelInput,
+  .inputUser:valid ~ .labelInput{
+    top: -20px;
+    left: 10px;
+    font-size: 12px;
+    color: #333;
+  }
+
+  #submit{
+    width: 100%;
+    padding: 10px 20px;
+    font-size: 18px;
+    font-weight: 500;
+    color: #fff;
+    background: #1ec012;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background 0.3s ease;
+  }
+
+  #submit:hover{
+    background: #1a9f10;
+  }
+  
+    </style>
+</head>
+<body>
+    <div class="box">
+        <form method="POST">
+           
+           <fieldset>
+            <legend><b>CADASTRO DE USUÁRIO</b></legend>
+            <br>
+            <div class="inputBox">
+                <input type="text" name="nome" id="nome" class="inputUser" required>
+                <label for="nome" class="labelInput">Nome completo</label>
+            </div>
+            <br><br>
+            <div class="inputBox">
+                <input type="text" name="email" id="email" class="inputUser" required>
+                <label for="email" class="labelInput">Email</label>
+            </div>
+            <br><br>
+            <div class="inputBox">
+                <input type="text" name="senha" id="senha" class="inputUser" required>
+                <label for="email" class="labelInput">Senha</label>
+            </div>
+            <br><br>
+            <div class="inputBox">
+                <input type="tel" name="telefone" id="telefone" class="inputUser" required>
+                <label for="telefone" class="labelInput">CPF</label>
+            </div>
+            <p>Sexo:</p>
+            <input type="radio" id="feminino" name="genero" value="feminino" required>
+            <label for="feminino">Feminino</label>
+            <br>
+            <input type="radio" id="masculino" name="genero" value="masculino" required>
+            <label for="masculino">Masculino</label>
+            <br>
+            <input type="radio" id="outro" name="genero" value="outro" required>
+            <label for="outro">Prefiro não dizer</label>
+            <br><br>
+            <label for="data_nascimento"><b>Data de Nascimento:</b></label>
+            <input type="date" name="data_nascimento" id="data_nascimento" required>
+            <br><br><br>
+            <div class="inputBox">
+                <input type="text" name="cidade" id="cidade" class="inputUser" required>
+                <label for="cidade" class="labelInput">Cidade</label>
+            </div>
+            <br><br>
+            <div class="inputBox">
+                <input type="text" name="estado" id="estado" class="inputUser" required>
+                <label for="estado" class="labelInput">Estado</label>
+            </div>
+            <br><br>
+            <input type="submit" name="submit" id="submit">
+        </fieldset>
+    </form>
+</div>
+</corpo>
+</html>

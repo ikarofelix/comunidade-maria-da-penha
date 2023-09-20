@@ -1,0 +1,471 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Formulário de Usuário</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+
+            background-color: #fbfbfb;
+            color: #0f0f0f;
+            width: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-family: sans-serif;
+        }
+
+        #userForm {
+            border-radius: 9px;
+            margin: 1rem;
+            width: 35%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            background-color: #FFFFFF;
+            box-shadow: 2px 2px 5px rgb(187, 187, 187);
+        }
+
+        .profile-basic {
+            width: 100%;
+    display: flex;
+    padding: 5rem;
+    flex-direction: column;
+    gap: 4rem;
+    justify-content: center;
+    align-items: center;
+        }
+
+        .select-infos {
+            width: 65%;
+        }
+
+        label {
+            font-family: sans-serif;
+            font-size: 2em;
+            color: #101010;
+            display: block;
+            margin-bottom: 8px;
+        }
+
+        .centered {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 0.5rem;
+  height: 90vh; /* Centralizar verticalmente na tela inteira */
+
+}
+
+        input {
+            margin-bottom: 2rem;
+            width: 100%;
+            padding: 10px;
+            font-size: 16px;
+            background: none;
+            color: #333;
+            border-radius: 5px;
+            transition: border-color 0.3s, box-shadow 0.3s;
+            outline: none;
+        }
+
+        input::placeholder {
+            color: #999;
+        }
+
+        input:focus {
+            outline: none;
+            border-color: #3498db;
+            box-shadow: 0 0 5px rgba(52, 152, 219, 0.5);
+        }
+
+        h4 {
+            display: flex;
+            justify-content: center;
+            font-size: 1.5em;
+            margin-top: 1.6em;
+        }
+
+        .custom-select {
+    display: flex;
+    width: 100%;
+    margin-top: 1em;
+    justify-content: center;
+    padding: 0.6em;
+    flex-direction: column;
+    border: 1px solid #979797;
+    border-radius: 8px;
+    cursor: pointer;
+    }
+
+        .selected {
+            display: flex;
+            justify-content: center;
+        }
+
+        .options {
+            display: flex;
+            padding: 1em;
+        }
+
+        .option {
+            display: flex;
+            border-bottom: 1px solid rgb(161, 161, 161);
+            padding: 0.6em;
+        }
+
+        .option:hover {
+            background-color: #c4c4c4;
+        }
+
+        .select-optional {
+            display: flex;
+    padding: 0 5rem;
+    gap: 4rem;
+    justify-content: center;
+    width: 115%;
+        }
+
+        .select-optional-infos {
+            display: flex;
+            justify-content: center;
+            flex-direction: column;
+            width: 88%;
+            align-items: center;
+        }
+
+        .interests {
+    width: 115%;
+    border-radius: 5px;
+    padding: 10px;
+  }
+
+  label {
+    font-weight: bold;
+    margin-bottom: 5px;
+    display: block;
+  }
+
+  #interesses {
+    display: flex;
+    flex-wrap: wrap;
+  }
+
+  .interesse-item {
+    background-color: #f4f4f4;
+    color: #333;
+    padding: 5px 10px;
+    margin: 5px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.2s;
+  }
+
+  .interesse-item:hover {
+    background-color: #ccc;
+  }
+
+  .interesse-item.selected {
+    background-color: #ccc;
+  }
+
+  #resultado {
+    display: none;
+    padding: 20px;
+
+    background-color: #ffffff;
+            box-shadow: 2px 2px 5px rgb(187, 187, 187);
+            border-radius: 9px;
+            width: 24%;
+            padding: 5rem;
+            margin: 1rem;
+
+  }
+
+  #resultado h2 {
+    margin-bottom: 10px;
+  }
+
+  #perfilFoto {
+    width: 100px;
+    display: block;
+    margin: 10px auto;
+  }
+
+  p {
+    margin: 10px 0;
+    line-height: 1.4;
+  }
+
+  strong {
+    font-weight: bold;
+  }
+
+  button, .btn-salvar {
+    background-color: #1cb11e;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    padding: 10px 20px;
+    cursor: pointer;
+    transition: background-color 0.2s;
+    text-align: center;
+  }
+
+  button:hover, .btn-salvar:hover {
+    background-color: #1cb11e;
+  }
+
+  #submitButton button {
+    width: 5em;
+  }
+
+  .button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 1em;
+  }
+
+  @media (max-width: 600px) {
+    .select-infos {
+        display: block;
+    }
+  }
+    </style>
+</head>
+
+<body>
+    <form id="userForm">
+
+        <div class="profile-basic">
+
+            <div class="select-infos">
+
+                <label for="username">Nome de Usuário:</label>
+                <p></p>
+                <input type="text" id="username" placeholder="Nome">
+                <p></p>
+                <label for="idade">Idade:</label>
+                <p></p>
+                <input type="number" id="idade" placeholder="Idade">
+                <p></p>
+                <label for="cidade">Cidade:</label>
+                <p></p>
+                <input type="text" id="cidade" placeholder="Cidade">
+
+                <h4 class="procurando">Tô procurando... </h4>
+
+                <div class="custom-select">
+                    <div class="selected">Selecione uma opção</div>
+                    <div class="options" style="display: none;">
+                        <div class="option" data-value="opcao1">um relacionamento sério</div>
+                        <div class="option" data-value="opcao2">Algo sério, mas vamos ver..</div>
+                        <div class="option" data-value="opcao3">Nada sério, mas depende...</div>
+                        <div class="option" data-value="opcao4">Algo casual</div>
+                        <div class="option" data-value="opcao5">Novas amizades</div>
+                        <div class="option" data-value="opcao6">Ainda não sei</div>
+
+                    </div>
+                </div>
+            </div>
+
+            <div class="select-photo">
+                <label for="foto">Foto:</label>
+                <input type="file" id="foto">
+            </div>
+
+        </div>
+
+        <div class="select-optional">
+
+            <div class="select-optional-infos">
+
+                <h4 class="titulo-relacionamento">Você se interessa por qual tipo de relacionamento?</h4>
+
+                <div class="custom-select">
+                    <div class="selected">Selecione um tipo</div>
+                    <div class="options" style="display: none;">
+                        <div class="option" data-value="Monogamia">Monogamia</div>
+                        <div class="option" data-value="Não monogamia ética">Não monogamia ética</div>
+                        <div class="option" data-value="Relacionamento aberto">Relacionamento aberto</div>
+                        <div class="option" data-value="Poliamor">Poliamor</div>
+                        <div class="option" data-value="Curto explorar">Curto explorar</div>
+                    </div>
+                </div>
+                <p></p>
+
+                <h4>Você quer ter filhos?</h4>
+
+                <div class="custom-select">
+                    <div class="selected">Selecione uma opção</div>
+                    <div class="options" style="display: none;">
+                        <div class="option" data-value="sim">Sim</div>
+                        <div class="option" data-value="nao">Não</div>
+                        <div class="option" data-value="indeciso">Ainda indeciso</div>
+                        <div class="option" data-value="jatenho">Já tenho filhos</div>
+                    </div>
+                </div>
+                <p></p>
+
+                <h4>Orientação Sexual:</h4>
+
+                <div class="custom-select">
+                    <div class="selected">Selecione uma opção</div>
+                    <div class="options" style="display: none;">
+                        <div class="option" data-value="heterossexual">Heterossexual</div>
+                        <div class="option" data-value="homossexual">Homossexual</div>
+                        <div class="option" data-value="bissexual">Bissexual</div>
+                        <div class="option" data-value="assexual">Assexual</div>
+                        <div class="option" data-value="pansexual">Pansexual</div>
+                        <div class="option" data-value="outro">Outro</div>
+                    </div>
+                </div>
+                <p></p>
+
+                <div class="interests">
+
+                    <label style="display: flex; justify-content: center;">Interesses:</label>
+
+                    <div id="interesses">
+                        <div class="interesse-item" data-value="BigBrotherBrasil">BigBrotherBrasil</div>
+                        <div class="interesse-item" data-value="Pisadinha">Pisadinha</div>
+                        <div class="interesse-item" data-value="Sextou">Sextou</div>
+                        <div class="interesse-item" data-value="Bruxaria">Bruxaria</div>
+                        <div class="interesse-item" data-value="Bregafunk">Bregafunk</div>
+                        <div class="interesse-item" data-value="Hiperativo">Hiperativo</div>
+                        <div class="interesse-item" data-value="Pagode">Pagode</div>
+                        <div class="interesse-item" data-value="MPB">MPB</div>
+                        <div class="interesse-item" data-value="Carros">Carros</div>
+                        <div class="interesse-item" data-value="Start-ups">Start-ups</div>
+                        <div class="interesse-item" data-value="Stand-up">Stand-up</div>
+                        <div class="interesse-item" data-value="Sertanejo">Sertanejo</div>
+                        <div class="interesse-item" data-value="Esqui">Esqui</div>
+                        <div class="interesse-item" data-value="Snowboard">Snowboard</div>
+                        <div class="interesse-item" data-value="Exposições">Exposições</div>
+                        <div class="interesse-item" data-value="Música">Música</div>
+                        <div class="interesse-item" data-value="Tatuagens">Tatuagens</div>
+                        <div class="interesse-item" data-value="Caminhada">Caminhada</div>
+                        <div class="interesse-item" data-value="Fotografia">Fotografia</div>
+                        <div class="interesse-item" data-value="Exposição">Exposição</div>
+                        <div class="interesse-item" data-value="Esportes">Esportes</div>
+                        <div class="interesse-item" data-value="Chá">Chá</div>
+                        <div class="interesse-item" data-value="Patinação">Patinação</div>
+                        <div class="interesse-item" data-value="Desenho">Desenho</div>
+                        <div class="interesse-item" data-value="Escrita">Escrita</div>
+                        <div class="interesse-item" data-value="Ramen">Ramen</div>
+                        <div class="interesse-item" data-value="Mangá">Mangá</div>
+                        <div class="interesse-item" data-value="Vlogs">Vlogs</div>
+                        <div class="interesse-item" data-value="Vinho">Vinho</div>
+                        <div class="interesse-item" data-value="Marvel">Marvel</div>
+                        <div class="interesse-item" data-value="Maquiagem">Maquiagem</div>
+                        <div class="interesse-item" data-value="Culinária">Culinária</div>
+                        <div class="interesse-item" data-value="Surf">Surf</div>
+                        <div class="interesse-item" data-value="Boliche">Boliche</div>
+                        <div class="interesse-item" data-value="Motos">Motos</div>
+                        <div class="interesse-item" data-value="Astrologia">Astrologia</div>
+                        <div class="interesse-item" data-value="Dança">Dança</div>
+                        <div class="interesse-item" data-value="Cozinhar">Cozinhar</div>
+                        <div class="interesse-item" data-value="Ativismo">Ativismo</div>
+                    </div>
+                </div>
+
+              
+
+            </div>
+        </div>
+
+        <div class="button">
+
+            <button id="submitButton">Enviar</button>
+        </div>
+
+
+    </form>
+
+    <div id="resultado" class="centered" style="display: none;">
+        <h2>Perfil do Usuário:</h2>
+        <img id="perfilFoto" width="100">
+        <p><strong>Nome de Usuário:</strong> <span id="perfilUsername"></span></p>
+        <p><strong>Idade:</strong> <span id="perfilIdade"></span></p>
+        <p><strong>Cidade:</strong> <span id="perfilCidade"></span></p>
+        <p><strong>Interesses:</strong> <span id="perfilInteresses"></span></p>
+
+        <button onclick="voltarAoFormulario()">Editar Perfil</button>
+        <a href="/escolha-seu-tema" class="btn-salvar">Salvar</a>
+    </div>
+
+    <script>
+        // Função para mostrar o resultado
+        function exibirResultado() {
+            document.getElementById("userForm").style.display = "none";
+            document.getElementById("resultado").style.display = "flex";
+        }
+
+        // Função para voltar ao formulário
+        function voltarAoFormulario() {
+            document.getElementById("userForm").style.display = "block";
+            document.getElementById("resultado").style.display = "none";
+        }
+
+        // Função para salvar informações do usuário
+        document.getElementById("submitButton").addEventListener("click", function (e) {
+            e.preventDefault();
+
+            const foto = document.getElementById("foto").files[0];
+            const username = document.getElementById("username").value;
+            const idade = document.getElementById("idade").value;
+            const cidade = document.getElementById("cidade").value;
+
+            const interessesSelecionados = Array.from(document.querySelectorAll(".interesse-item.selected")).map(item => item.dataset.value);
+
+            if (foto) {
+                const reader = new FileReader();
+                reader.onload = function (event) {
+                    document.getElementById("perfilFoto").src = event.target.result;
+                };
+                reader.readAsDataURL(foto);
+            }
+
+            document.getElementById("perfilUsername").textContent = username;
+            document.getElementById("perfilIdade").textContent = idade;
+            document.getElementById("perfilCidade").textContent = cidade;
+            document.getElementById("perfilInteresses").textContent = interessesSelecionados.join(", ");
+
+            exibirResultado();
+        });
+
+        // Função para selecionar interesses
+        Array.from(document.querySelectorAll(".interesse-item")).forEach(item => {
+            item.addEventListener("click", function () {
+                this.classList.toggle("selected");
+            });
+        });
+
+        // Função para dropdown customizado
+        Array.from(document.querySelectorAll(".custom-select .selected")).forEach(selectedDiv => {
+            selectedDiv.addEventListener("click", function () {
+                const optionsDiv = this.nextElementSibling;
+                optionsDiv.style.display = optionsDiv.style.display === "none" ? "block" : "none";
+            });
+        });
+
+        Array.from(document.querySelectorAll(".custom-select .option")).forEach(option => {
+            option.addEventListener("click", function () {
+                const selectedDiv = this.parentElement.previousElementSibling;
+                selectedDiv.textContent = this.textContent;
+                this.parentElement.style.display = "none";
+            });
+        });
+    </script>
+</body>
+
+</html>

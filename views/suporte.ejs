@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Support</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: linear-gradient(to right, #f2f2f2, #e6e6e6);
+      margin: 0;
+      padding: 0;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+    }
+
+    .container {
+      max-width: 800px;
+      padding: 20px;
+      background-color: #fff;
+      border-radius: 5px;
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    }
+
+    h1 {
+      font-size: 32px;
+      color: #333;
+      margin-bottom: 20px;
+      text-align: center;
+    }
+
+    .contact-box {
+      background-color: #fff;
+      padding: 20px;
+      border-radius: 5px;
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    }
+
+    h2 {
+      font-size: 24px;
+      color: #333;
+      margin-bottom: 10px;
+    }
+
+    label {
+      display: block;
+      margin-bottom: 5px;
+      color: #333;
+    }
+
+    select, textarea, input[type="email"] {
+      width: 100%;
+      padding: 10px;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+      margin-bottom: 15px;
+      font-size: 16px;
+    }
+
+    input[type="submit"] {
+      background-color: #4CAF50;
+      color: #fff;
+      border: none;
+      padding: 10px 20px;
+      border-radius: 20px;
+      cursor: pointer;
+      font-size: 16px;
+    }
+
+    input[type="submit"]:hover {
+      background-color: #45a049;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>Solicitação de Suporte</h1>
+    <div class="contact-box">
+      <h2>Respostas pré-definidas</h2>
+      <form action="enviar_suporte.php" method="POST">
+        <label for="resposta">Selecione a resposta:</label>
+        <select name="resposta" id="resposta">
+          <option value="Problema de login">Problema de login</option>
+          <option value="Erro no pagamento">Erro no pagamento</option>
+          <option value="Problema no perfil">Problema no perfil</option>
+          <!-- Adicione outras opções de resposta aqui -->
+        </select>
+        <label for="mensagem">Digite o seu problema:</label>
+        <textarea name="mensagem" id="mensagem" rows="5"></textarea>
+        <label for="email">Digite o seu email:</label>
+        <input type="email" name="email" id="email">
+        <input type="submit" value="Enviar">
+      </form>
+    </div>
+  </div>
+</body>
+</html>

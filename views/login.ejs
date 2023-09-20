@@ -1,0 +1,560 @@
+<!DOCTYPE html>
+<html lang="ptbr">
+<head>
+  <link rel="icon" href="https://i.imgur.com/XNahCNe.png" type="image/x-icon">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+ 
+  <title>Black Panthers Connection</title>
+
+  <style>
+    
+
+    body{
+      height: 100%;
+      background-image: url('https://i.imgur.com/Ch4h26g.png');
+      background-position: center center;
+      background-repeat: no-repeat;
+      background-size: cover; /* Background image is responsive for all devices */
+      background-attachment: fixed;
+      font-family: sans-serif;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+    }
+  
+    .body{
+  
+
+  font-family: sans-serif;
+  position: absolute;
+  width: 100%;
+  height:100%;
+  display: flex;
+  align-items: right;
+  justify-content: right;
+  padding: 8px;
+  background-attachment: fixed;
+  
+}
+
+.folha-de-arruda {
+        position: fixed;
+        bottom: 13px; /* propriedade que sobe e desce a imagem */
+        right: 15px; /* move da direita para esquerda */
+        width: 80px; /* aumenta a imagem */
+        height: 80px; /* diminui a imagem */
+        background-image: url("https://cdn160.picsart.com/upscale-272203775040211.png?r1024x1024");
+        background-size: cover;
+      }
+
+
+#content {
+  position: fixed;
+  top: 40%;
+  width: 90%;
+  height:45%;
+  display: flex;
+  align-items: center;
+  justify-content: right;
+  padding: 8px;
+  max-height: 80%;
+  max-width: 75%;
+}
+
+.phone {
+  width: 320px;
+  max-width: 320px;
+  height: 650px;
+  background: #000000;
+  border-radius: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.screen {
+  width: calc(100% - 10px);
+  height: calc(100% - 10px);
+  background: #ffffff;
+  border-radius: 30px;
+  overflow: hidden!important;
+  background-repeat: no-repeat, repeat;
+  background-position: center;
+  background-size: cover;
+}
+
+.top {
+  width: 100%;
+  height: 25px;
+  display: flex;
+  justify-content: space-between;
+  background: rgba(0, 0, 0, 0.2);
+  overflow: hidden;
+  border-bottom: 1px solid hsla(0, 0%, 0%, 0.2);
+}
+
+.dock-left, .dock-right {
+  display: flex;
+  align-items: center;
+  text-align: center;
+  flex: 1;
+  color: hsl(0, 0%, 100%);
+}
+
+.dock-left {
+  padding: 5px 10px 0 5px;
+  font-size: 16px;
+  font-weight: 200;
+  color: #000000;
+  text-shadow: -1px 0 hsl(0, 1%, 47%), 0 1px #bbb, 1px 0 #bbb, 0 -1px #bbb;
+}
+
+.clock {width: 100%}
+
+.dock-right {
+  display: flex;
+  justify-content: space-around;
+  padding: 5px 10px 0 5px;
+}
+
+
+
+.dock .sensor, .dock .camera {
+  width: 12px;
+  height: 12px;
+  background: #000;
+  border-radius: 50%;
+  margin: 0 3px 14px 3px;
+}
+
+.dock .speaker {
+  width: 60px;
+  height: 8px;
+  background: #000;
+  border-radius: 7px;
+  margin: 0 5px 17px 5px;
+}
+
+#icons {
+  overflow: -moz-hidden-unscrollable;
+  display: flex;
+  justify-content: center;
+  flex: 1;
+  height: 500px;
+  max-height: 500px;
+  padding-top: 18px;
+  padding-bottom: 18px;
+  flex-wrap: wrap;
+  align-content: flex-start;
+}
+
+.icon-app {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 50px;
+  height: 50px;
+  background: rgba(131, 2, 148, 0.5);
+  margin: 10px 10px 27px 10px;
+  border-radius: 12px;
+  color: #f8f8f8;
+}
+
+.icon-app .icon {
+  margin: 10px 0 10px 0;
+  font-size: 2em;
+}
+
+.icon-app span {
+  width: auto;
+  white-space: nowrap;
+  font-size: 0.8em;
+  color: #fff;
+  text-shadow: -1px 0 #333, 0 1px #333, 1px 0 #333, 0 -1px #333;
+  margin-bottom: 0px;
+}
+
+#dock-home {
+  display: flex;
+  flex: 1;
+  justify-content: center;
+  align-items: center;
+  height: 30px;
+}
+.buttons-home {
+  display: flex;
+  background: rgba(228, 228, 228, 0.2);
+  border-radius: 20px;
+  padding: 3px;
+}
+
+.buttons-home .icon-app {
+  margin: 7px;
+  align-items: center;
+  justify-content: center;
+  font-size: 2em;
+}
+
+.dock-bt-home {
+  display: flex;
+  flex: 1;
+  height: 25px;
+  margin-top: 20px;
+  align-items: center;
+  justify-content: center;
+}
+
+.dock-bt-home .home {
+  width: 50px;
+  height: 5px;
+  background: rgba(117, 117, 117, 0.924);
+  border-radius: 30px;
+}
+.phone__wrapper {
+  position: fixed;
+  bottom: 0%;
+  right: 5%;
+  background-color: #ffffff;
+  width: 15%;
+  height: 80%;
+  border-radius: 20px;
+  box-shadow: 0 0 50px rgba(0, 0, 0, 0.3);
+  overflow: hidden;
+}
+
+.phone__content {
+  height: 80%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 2vh;
+}
+  .login-panel {
+  float: 500%;
+  text-align: center;
+  
+  color: #000000;
+}
+
+
+/* canva de separação de caixa de dialogo */
+
+.login-panel input {
+  width: 100%;
+  padding: 5%;
+  margin: 0 auto;  
+  margin-bottom: 2vh;
+  border-radius: 5px;
+  border: 0px;
+}
+
+
+/* canva de separação de caixa de dialogo do entrar e senha */
+
+.login-panel button {
+  width: 50%;
+  padding: 2vh;
+  margin-top: 2vh;
+  background-color: #3498db;
+  border: none;
+  color: #fff;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
+}
+
+.absolute {
+  position: absolute;
+}
+
+.container {
+  width: 0px;
+  margin-top: 10px;
+  margin: 0 auto;
+  height: 485px;
+}
+
+.content-container {
+  width: 215px;
+  margin-top: 14px;
+  margin: 0 auto;
+  margin-left: 16px;
+  height: 467px;
+}
+
+.iphone {
+  width: 250px;
+  top: 0;
+  left: 0;
+}
+
+.image-container {
+  position: relative;
+}
+
+.iphone:nth-of-type(2) {
+  z-index: -1;
+  width: 249px;
+}
+
+.wifi {
+  font-size: 7.8px;
+  padding-left: 20.5px;
+  color: #000000;
+}
+
+.battery {
+  width: 14.5px;
+  right: 6.3px;
+  top: 6px;
+}
+
+.time {
+  font-size: 47px;
+  font-weight: 1;
+  margin-left: 62.5px;
+  margin-top: 32px;
+  color: #000000;
+}
+
+.date {
+  font-size: 12px;
+  font-weight: 500;
+  margin-left: 54px;
+  margin-top: -51px;
+  color: #000000;
+}
+
+.lock {
+  width: 20.5px;
+  margin-left: 102px;
+  margin-top: 5.25px;
+}
+
+.cellular {
+  width: 10px;
+  right: 35.1px;
+  top: 10px;
+}
+
+.wifi_icon {
+  width: 9.5px;
+  right: 23px;
+  top: 9.4px;
+}
+
+.little_swipedown_thingy {
+  border-radius: 0.5px;
+  border: 0.8px solid #bfbfc7;
+  width: 25px;
+  right: 14.5px;
+  top: 13px;
+}
+
+.torch {
+  border: none;
+  height: 28.5px;
+  width: 28.5px;
+  border-radius: 50%;
+  background: #c6c6c8;
+  left: 27px;
+  bottom: 26.6px;
+}
+
+.torch_icon {
+  height: 15px;
+  margin-top: 7px;
+  margin-left: 11.5px;
+}
+
+.cam {
+  border: none;
+  height: 28.5px;
+  width: 28.5px;
+  border-radius: 50%;
+  background: #c6c6c8;
+  right: 25px;
+  bottom: 26.6px;
+}
+
+.cam_icon {
+  height: 9.5px;
+  margin-top: 9px;
+  margin-left: 8px;
+}
+
+.little_swipeup_thingy {
+  border-radius: 1.5px;
+  border: 1.5px solid #000000;
+  width: 74.3px;
+  left: 70px;
+  bottom: -5.6px;
+}
+
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background-color: #f5f5f5;
+  font-family: sans-serif;
+}
+
+.container {
+  width: 300px;
+  padding: 20px;
+  background-color: #fff;
+  border-radius: 5px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+h2 {
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+form input {
+  width: 91.5%;
+  padding: 10px;
+  margin-bottom: 20px;
+  border: 1px solid #000000;
+  border-radius: 3px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.links {
+  text-align: center;
+}
+
+.links a {
+  margin-right: 0px;
+  color: #666;
+  text-decoration: none;
+}
+
+.links a:hover {
+  text-decoration: underline;
+}
+ 
+
+form button {
+  width: 100%;
+  padding: 10px;
+  background-color: #4caf50;
+  color: #fff;
+  border: none;
+  border-radius: 3px;
+  cursor: pointer;
+}
+
+.social-login {
+  margin: 10px 0;
+}
+
+.social-login button {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 20px;
+  background-color: #255cca; /* Facebook Blue */
+  color: #fff;
+  border: none;
+  border-radius: 3px;
+  cursor: pointer;
+}
+
+
+.links a:nth-last-child(2)::after,
+.links a:nth-last-child(5)::after {
+content: "";
+display: inline-block;
+width: 2px;
+height: 15px;
+background-color: #727272;
+vertical-align: middle;
+margin-left: 10px;
+margin-right: 5px;
+}
+</style>
+</head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta http-equiv="X-UA-Compatible" content="ie=edge">
+<link rel="stylesheet" href="style.css">
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+<script src="https://kit.fontawesome.com/42c8de28f3.js" crossorigin="anonymous"></script>
+<title>Phone screen</title>
+</head>
+<body>
+<div id="content">
+  <div class="phone">
+    <div class="screen">
+      <div class="top">
+        <div class="dock-left">
+          <span class="clock">15:55</span>
+        </div>
+        <div class="dock">
+          <div class="sensor"></div>
+          <div class="speaker"></div>
+          <div class="camera"></div>
+        </div>
+        <div class="dock-right">
+          <div class="signal"><i class="fas fa-signal"></i></div>
+          <div class="wifi"><i class="fas fa-wifi"></i></div>
+          <div class="battery"><i class="fas fa-battery"></i></div>
+        </div>
+      </div>
+
+      <div id="icons">
+        <!-- Painel de Login -->
+        <div class="container">
+          <h2>Login</h2>
+          <form method="POST">
+            <input name="email" type="text" placeholder="Email" required/>
+            <input name="senha" type="password" placeholder="Senha" required/>
+            <button type="submit">Entrar</button>
+          </form>
+          <div class="links">
+            <p>
+              <a href="/registro">Cadastre-se</a>
+              <a href="/recuperacao-senha">Esqueceu a senha?</a>
+            </p>
+          
+            </div>
+          
+               <script>
+                  function handleCredentialResponse(response) {
+                    const data = jwt_decode(response.credential)
+                    console.log(data)
+                  }
+
+                
+              
+              </script>
+              <div id="buttonDiv"></div> 
+            </body>
+            <p></p>
+           
+            </div>
+          </div>
+        </div>
+      </div>
+       
+          <div class="home"></div>
+          <div class="folha-de-arruda"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>  
+</body>
+</html>

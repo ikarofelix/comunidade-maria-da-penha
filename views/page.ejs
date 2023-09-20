@@ -1,0 +1,358 @@
+<!DOCTYPE html>
+<html>
+<head>
+   
+  <!-- Define o ícone da página -->
+  <link rel="icon" href="https://i.imgur.com/XNahCNe.png">
+ 
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" integrity="sha512-uXCHVj3a6Ixgsj7wqmRXZvECn47XHhSKDIEKBl51yZ2wLZ8y9kix+1o4qYaVEeYUBUWQZgBYNChws8WUIPqMCA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <!-- Link para a biblioteca do Font Awesome -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Home</title>
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: Arial, sans-serif;
+      background-color: transparent;
+      color: #333;
+    }
+
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 20px;
+    }
+
+    .navbar {
+      display: flex;
+      align-items: center;
+      justify-content:center;
+      padding: 0 30px; /* Adiciona um espaçamento interno de 0 no topo e na base e 10 pixels na           esquerda e direita */
+      background-color: white;
+      text-align:center;
+      box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.5), 0px 4px 8px rgba(0, 0, 0, 0.3);
+      
+      padding: 10px;
+    }
+
+    .navbar-link {
+      text-decoration: none;
+      color: #333;
+      font-weight: bold;
+      margin-right: 20px;
+    }
+
+    .search-box {
+      position: relative;
+      margin-right: 20px;
+    }
+
+    .search-box input {
+      padding: 8px;
+      border: none;
+      border-radius: 20px;
+      outline: none;
+    }
+
+    .login-button {
+      background-color:  #1ec012;
+      box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.5), 0px 4px 8px rgba(0, 0, 0, 0.3);
+      color: #fff;
+      border: none;
+      outline: none;
+      padding: 10px 20px;
+      border-radius: 20px;
+      cursor: pointer;
+    }
+
+   
+    .highlight-section {
+      background-image: url('https://i.imgur.com/aKDxDjO.png');
+      box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.5), 0px 4px 8px rgba(0, 0, 0, 0.3);
+      background-size: cover;
+      background-position: center;
+      text-align: center;
+      padding: 100px 0;
+      margin-bottom: 20px;
+      color: white;
+    }
+
+    .highlight-section h2 {
+      font-size: 36px;
+      margin-bottom: 20px;
+    }
+
+    .highlight-section p {
+      font-size: 20px;
+      margin-bottom: 20px;
+    }
+
+    .plans-section {
+      display: flex;
+      justify-content: space-between;
+      margin-bottom: 20px;
+    }
+
+    .plan-box {
+      background-color: #fff;
+      box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.5), 0px 4px 8px rgba(0, 0, 0, 0.3);
+      padding: 20px;
+      border-radius: 10px;
+      text-align: left; /* Alinhamento à esquerda */
+    }
+
+    .plan-box h3 {
+      font-size: 24px;
+      margin-bottom: 10px;
+    }
+
+    .plan-box p {
+      font-size: 20px;
+      margin-bottom: 10px;
+    }
+
+    .features {
+      margin-bottom: 20px;
+    }
+
+    .features ul {
+      list-style-type: none;
+      margin: 0;
+      padding: 0;
+    }
+
+    .features li {
+      margin-bottom: 5px;
+    }
+
+    .buy-button {
+      background-color:  #1ec012;
+      color: #fff;
+      border: none;
+      outline: none;
+      padding: 10px 20px;
+      border-radius: 20px;
+      cursor: pointer;
+    }
+
+    .featured-rooms-section {
+      display: flex;
+      justify-content: space-between;
+      margin-bottom: 20px;
+    }
+
+    .featured-room {
+      background-color: #fff;
+      padding: 20px;
+      border-radius: 10px;
+      text-align: left; /* Alinhamento à esquerda */
+    }
+
+    .featured-room h3 {
+      font-size: 24px;
+      margin-bottom: 10px;
+    }
+
+    .featured-room p {
+      font-size: 20px;
+      margin-bottom: 20px;
+    }
+
+    .faq-section {
+      background-color:  #fff;
+      padding: 20px;
+      margin-bottom: 20px;
+      box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.5), 0px 4px 8px rgba(0, 0, 0, 0.3);
+    }
+
+    .faq-section h2 {
+      font-size: 24px;
+      margin-bottom: 10px;
+    }
+
+    .faq-list {
+      list-style-type: none;
+      padding: 0;
+    }
+
+    .faq-list li {
+      margin-bottom: 10px;
+      cursor: pointer;
+    }
+
+    .faq-list strong {
+      font-weight: bold;
+    }
+
+    .faq-list a {
+      color: #1ec012;;
+      text-decoration: none;
+    }
+
+    .social-icons {
+    text-align: center;
+    margin-top: 20px;
+  }
+
+  .social-icon {
+    display: inline-block;
+    margin: 0 10px;
+    font-size: 24px;
+    color: #000; /* Cor dos ícones */
+    }
+
+    /* Estilos adicionais para responsividade */
+    @media screen and (max-width: 768px) {
+      .container {
+        padding: 10px;
+      }
+
+      .plans-section {
+        flex-direction: column;
+      }
+
+      .plan-box {
+        margin-bottom: 20px;
+      }
+
+      .featured-rooms-section {
+        flex-direction: column;
+      }
+
+      .featured-room {
+        margin-bottom: 20px;
+      }
+    }
+
+      /* Estilos para a navbar */
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background-color: #1ec012; /* Cor de fundo da navbar */
+            padding: 10px;
+            border-radius: 8px;
+            box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.5), 0px 4px 8px rgba(0, 0, 0, 0.3);
+        }
+
+        nav a {
+            color: white; /* Cor do texto dos links da navbar */
+            text-decoration: none;
+            margin: 0 10px;
+        }
+    
+  </style>
+</head>
+<body>
+  <div class="container">
+    <nav>
+   <a href="/" class="icon"><i class="fas fa-sign-in-alt"></i> Sair</a>
+   <a href="https://www.facebook.com" class="icon"><i class="fab fa-facebook"></i> Facebook</a>
+   <a href="/suporte" class="icon"><i class="fas fa-book-open"></i> Tutorial</a>
+   <a href="/regras" class="icon"><i class="fas fa-gavel"></i> Regras</a>
+   <a href="/politica-privacidade" class="icon"><i class="fas fa-user-shield"></i> Política de privacidade</a>        
+    </nav>
+    
+  
+    <section class="highlight-section">
+      <h2>Bate-Papo Online</h2>
+      <p>Bem-vindo a black Panthers Connection!</p>
+      
+
+    </section>
+    <br></br>
+    <section class="plans-section">
+      <div class="plan-box">
+        <h3>Plano Gratuito</h3>
+        <p>Acesso básico ao chat</p>
+        <!--<p>Valor: <b>R$00,00/15 dias</b></p>-->
+        <div class="features">
+          <ul>   
+            <li>Com o plano free, você poderá: </li>
+            <li>desfrutar de todos os benefícios</li>
+            <li> do Plano VIP na plataforma<!-- por 15 dias--> </li>       
+          </ul>
+        </div>
+         <track> </track>
+         <button class="buy-button" onclick="redirecionar()">Assinar</button>
+
+      </div><!-- Chat logs will be displayed here
+      <div class="plan-box">
+        <h3>Plano VIP</h3>
+        <p>Acesso completo ao chat</p>
+        <p>Valor: <b>R$00,00/mês</b></p>
+        <div class="features">
+          <ul>
+            <li>Acesso a salas públicas e privadas</li>
+            <li>Suporte prioritário</li>
+            <li>Visualização de 1 a até 4 cameras no chat</li>
+          </ul>
+        </div>
+        
+        <button class="buy-button" onclick="redirecionar()">Assinar</button>
+      </div>
+      <div class="plan-box">
+        <h3>Plano Premium</h3>
+        <p>Acesso exclusivo ao chat</p>
+        <p>Valor: <b>R$00,00/mês</b></p>
+        <div class="features">
+          <ul>
+            <li>Acesso a todas as salas</li>
+            <li>Visualização de 1 a até 10 cameras no chat</li>
+            <li>Recursos avançados de chat</li>
+          </ul>
+        </div>
+        <button class="buy-button" onclick="redirecionar()">Assinar</button>
+      </div> -->
+    </section>
+
+ 
+   <br></br>
+    <section class="faq-section">
+      <h2>Dúvidas Frequentes</h2>
+      <ul class="faq-list">
+        <li onclick="toggleAnswer(1)">
+          <strong>Como recuperar mensagens enviadas no chat?</strong>
+          - Nenhuma mensagem enviada é salva, de modo que sempre será uma conversa secreta e sigilosa.
+        </li>
+        <li onclick="toggleAnswer(2)">
+          <strong>Como convidar amigos para o site?</strong>
+          - Para convidar amigos, compartilhe o link de nosso site e peça para que siga as instruções .
+        </li>
+        <li onclick="toggleAnswer(3)">
+          <strong>Como se tornar um usuário VIP?</strong>
+          - Para se tornar um usuário VIP, clique no botão "Assinar" abaixo do plano desejado e siga as instruções.
+        </li>
+        <li onclick="toggleAnswer(4)">
+          <strong>Como recuperar minha senha?</strong>
+          - Para recuperar sua senha, clique no link "Esqueceu sua senha?" na página de login e siga as instruções.
+        </li>
+        <li onclick="toggleAnswer(5)">
+          <strong>Como entrar em contato com o suporte?</strong>
+          - Para entrar em contato com o suporte, envie um e-mail para blackpanthersconnection@gmail.com
+        </li>
+      </ul>
+    </section>
+    <script>
+        function redirecionar() {
+          window.location.href = 'http://www.blackpanthersconnection.com.br/meuperfil';
+        }
+      </script>
+
+  <script>
+    function toggleAnswer(index) {
+      const answer = document.querySelector(`.faq-list li:nth-child(${index})`);
+      answer.classList.toggle('active');
+    }
+  </script>
+</body>
+</html>

@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Página de Logs</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <link rel="stylesheet" href="logs.css">
+</head>
+<body>
+    <div class="navbar">
+        <a href="/management">Página de Gerenciamento</a>
+        <a href="#" class="logout">
+            Logout <i class="fas fa-sign-out-alt"></i>
+        </a>
+    </div>
+    
+    <div class="container">
+        <h2>Logs de Mensagens</h2>
+        <div class="logs-list">
+            <div class="log-entry">
+                <span class="log-date">[2023-08-09 10:00]</span> 
+                <span class="log-user">Usuário1:</span>
+                <span class="log-message">Olá, como está?</span>
+            </div>
+            <div class="log-entry">
+                <span class="log-date">[2023-08-09 10:01]</span> 
+                <span class="log-user">Usuário2:</span>
+                <span class="log-message">Estou bem, e você?</span>
+            </div>
+        </div>
+       
+    </div>
+
+    <script src="https://www.gstatic.com/firebasejs/8.0.0/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.0.0/firebase-auth.js"></script>
+
+    <script>
+         //configurações do Firebase
+         var firebaseConfig = {
+        apiKey: "AIzaSyCYReocq-3ZcEVbwFR3OQS-R9OJ-EfL2Os",
+        authDomain: "login---gerenciamento.firebaseapp.com",
+        projectId: "login---gerenciamento",
+        storageBucket: "login---gerenciamento.appspot.com",
+        messagingSenderId: "710259137879",
+        appId: "1:710259137879:web:537f5924faa6a8ef5ef212",
+        };
+    firebase.initializeApp(firebaseConfig);
+
+    // Função para realizar o logout
+    function logout() {
+        firebase.auth().signOut()
+        .then(() => {
+            // Deslogado com sucesso. Redirecionar para a página de login ou qualquer outra página desejada
+            window.location.href = "login.html";
+        }).catch((error) => {
+            // Um erro ocorreu
+            console.error("Erro ao deslogar:", error.message);
+            alert(error.message);
+        });
+    }
+
+    // Adicionar um ouvinte de evento para o botão de logout
+    document.querySelector('.logout').addEventListener('click', logout);
+
+    function getChatLogs() {
+    fetch('https://bp-01.blackpanthersconnection.com.br/logs')
+      .then((response) => response.json())
+      .then((data) => {
+        const chatLogsContainer = document.getElementById('chatLogs');
+
+          // Limpa o conteúdo existente na tabela
+          chatLogsContainer.innerHTML = '';
+
+          // Renderiza os logs de chat na tabela
+          data.forEach((message) => {
+            const row = document.createElement('tr');
+            row.innerHTML = `
+            <td>${message.username}</td>
+            <td>${message.message}</td>
+            <td>${message.date}</td>
+            `;
+            chatLogsContainer.appendChild(row);
+          });
+        })
+        .catch((error) => {
+          console.error('Erro ao obter os logs de chat', error);
+        });
+    }
+
+     // Chame a função para obter e renderizar os logs de chat ao carregar a página
+  document.addEventListener('DOMContentLoaded', function(){
+    getChatLogs();
+  });
+
+   // Conectar-se ao servidor do Socket.IO
+   const socket = io();
+
+// Ouvir o evento 'sendChatLog' emitido pelo servidor
+socket.on('sendChatLog', (chatLogs) => {
+  // Exibir os logs de chat recebidos na página
+  const chatLogsContainer = document.getElementById('chatLogs');
+
+  // Limpar o conteúdo existente
+  chatLogsContainer.innerHTML = '';
+
+  // Renderizar os logs de chat na página
+  chatLogs.forEach((log) => {
+    const row = document.createElement('tr');
+    row.innerHTML = `
+      <td>${log.id}</td>
+      <td>${log.message}</td>
+      <td>${log.date}</td>
+    `;
+    chatLogsContainer.appendChild(row);
+  });
+});
+
+// Emitir o evento 'getChatLogs' para solicitar os logs de chat ao servidor
+socket.emit('getChatLogs');
+    </script>
+</body>
+</html>
